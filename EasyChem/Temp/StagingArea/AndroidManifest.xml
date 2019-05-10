@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:theme="@android:style/Theme.NoTitleBar" android:versionCode="1" android:versionName="1.0" package="com.Pixel.FacebookSdk" android:installLocation="preferExternal">
+  <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
+  <uses-feature android:name="android.hardware.camera" />
+  <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <application android:icon="@drawable/app_icon" android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:debuggable="false" android:isGame="true" android:banner="@drawable/app_banner">
+    <activity android:label="@string/app_name" android:name="com.unity3d.player.UnityPlayerNativeActivity" android:screenOrientation="sensorLandscape" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
+    </activity>
+    <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:label="@string/app_name" android:name="com.unity3d.player.VideoPlayer" android:screenOrientation="portrait">
+    </activity>
+    <!--
+            To support devices using the TI S3D library for stereo mode we must 
+            add the following library.
+            Devices that require this are: ODG X6 
+        -->
+    <uses-library android:name="com.ti.s3d" android:required="false" />
+    <!--
+            To support the ODG R7 in stereo mode we must add the following library.
+        -->
+    <uses-library android:name="com.osterhoutgroup.api.ext" android:required="false" />
+    <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:name="com.facebook.unity.FBUnityLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:name="com.facebook.unity.FBUnityDialogsActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:configChanges="keyboardHidden|orientation" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+    <activity android:exported="true" android:name="com.facebook.unity.FBUnityAppLinkActivity" />
+    <activity android:exported="true" android:name="com.facebook.unity.FBUnityDeepLinkingActivity" />
+    <activity android:name="com.facebook.unity.FBUnityGameRequestActivity" />
+    <activity android:name="com.facebook.unity.FBUnityCreateGameGroupActivity" />
+    <activity android:name="com.facebook.unity.FBUnityJoinGameGroupActivity" />
+    <activity android:name="com.facebook.unity.AppInviteDialogActivity" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb1617125235261813" />
+    <provider android:authorities="com.facebook.app.FacebookContentProvider1617125235261813" android:exported="true" android:name="com.facebook.FacebookContentProvider" />
+    <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+  </application>
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+  <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+  <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+</manifest>
+<!-- android:installLocation="preferExternal" -->
